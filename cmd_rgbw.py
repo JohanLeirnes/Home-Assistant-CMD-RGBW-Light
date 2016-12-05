@@ -25,6 +25,15 @@ import homeassistant.helpers.config_validation as cv
 
 _LOGGER = logging.getLogger(__name__)
 
+CONF_STATE_VALUE_TEMPLATE = 'state_value_template'
+CONF_BRIGHTNESS_STATE = 'brightness_state'
+CONF_BRIGHTNESS_COMMAND = 'brightness_command'
+CONF_BRIGHTNESS_VALUE_TEMPLATE = 'brightness_value_template'
+CONF_RGB_STATE = 'rgb_state'
+CONF_RGB_COMMAND = 'rgb_command'
+CONF_RGB_VALUE_TEMPLATE = 'rgb_value_template'
+CONF_BRIGHTNESS_SCALE = 'brightness_scale'
+
 DEFAULT_NAME = 'CMD RGBW Light'
 DEFAULT_BRIGHTNESS_SCALE = 255
 
@@ -53,7 +62,6 @@ RGB_BOUNDARY = 40
 
 WHITE = [255, 255, 255]
 
-# pylint: disable=unused-argument
 def setup_platform(hass, config, add_devices, discovery_info=None):
     """Find and return switches controlled by shell commands."""
     devices = config.get(CONF_SWITCHES, {})
